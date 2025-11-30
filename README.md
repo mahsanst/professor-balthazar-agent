@@ -48,4 +48,60 @@ A crucial tool that maintains conversation continuity through unique session IDs
 
 ### Character Consistency (`persona_engine`)
 
-This tool ensures that Professor Balthazar maintains consistent personality, speech
+This tool ensures that Professor Balthazar maintains consistent personality, speech patterns, and inventive vocabulary throughout all interactions. It's responsible for the agent's unique voice and the magical, inventive language that makes consultations engaging, now with emotional rephrasing for anger scenarios.
+
+### Solution Archiver (`consultation_archiver`)
+
+This tool saves user problems and generated solutions to "Professor's archives," enabling potential future analysis and continuous improvement of the consultation process. It also allows for tracking solution effectiveness over time, integrated with Docker deployment for production scalability.
+
+## File Structure
+
+- **consultation_agent.py**: Core agent logic with tools, memory, and helper functions (original + emotional upgrades).
+- **app.py**: Streamlit UI for interactive chat interface.
+- **eval.py**: Day 4 evaluation script (90% creative/robustness scores).
+- **graph.py**: LangGraph multi-agent team for routing and collaboration.
+- **Test.py**: Unit tests for agent functionality and upgrades.
+- **requirements.txt**: Dependencies for running the project.
+- **Dockerfile**: Production deployment configuration.
+- **.env.example**: Template for API key setup (use Kaggle Secrets).
+- **thumbnail.png**: Project thumbnail for capstone submission.
+- **README.md**: This file—project documentation and usage.
+
+## Installation & Usage
+
+### Quick Start
+```bash
+pip install -r requirements.txt
+python consultation_agent.py  # Run standalone
+```
+
+### Run Demo
+```python
+import asyncio
+from consultation_agent import demonstrate_magic_machine
+
+asyncio.run(demonstrate_magic_machine())
+```
+
+### Run Streamlit UI
+```bash
+streamlit run app.py
+```
+
+### Run Evals
+```python
+python eval.py
+```
+
+### Docker Deployment
+```bash
+docker build -t balthazar .
+docker run -p 8501:8501 balthazar
+```
+
+## Team Contributions
+- **Azam Kheyri**: Core agent architecture, creative reframing tools, memory system
+- **Mahsa Nadifar**: Multi-agent LangGraph integration, emotional rephrasing tools, evals, Streamlit UI, Docker deployment
+- **Parisa Ahmadi Ghotbi**: Prompt engineering, testing, deployment optimization
+
+```
