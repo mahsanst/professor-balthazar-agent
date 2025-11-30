@@ -73,3 +73,17 @@ async def run_all_tests():
 if __name__ == "__main__":
     success = asyncio.run(run_all_tests())
     exit(0 if success else 1)
+
+
+# Upgrade Test: Multi-Agent
+async def test_multi_agent():
+    from graph import app  # Your graph
+    inputs = {"messages": [HumanMessage(content="Angry boss reply?")]}
+    for output in app.stream(inputs):
+        for key, value in output.items():
+            print(f"Multi Test {key}: {value['messages'][-1].content}")
+    return True
+
+# Run upgrade test
+asyncio.run(test_multi_agent())
+print("✅ Upgrade test passed!")
