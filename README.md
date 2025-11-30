@@ -65,7 +65,7 @@ This tool saves user problems and generated solutions to "Professor's archives,"
 - **Dockerfile**: Production deployment configuration.
 - **.env.example**: Template for API key setup (use Kaggle Secrets).
 - **thumbnail.png**: Project thumbnail for capstone submission.
-- **README.md**: This file—project documentation and usage.
+- **README.md**: This file contains project documentation and usage.
 
 ## Installation & Usage
 
